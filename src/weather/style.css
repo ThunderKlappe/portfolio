@@ -1,0 +1,222 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #effffd;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #1f1f1f;
+}
+
+#header {
+    height: 72px;
+    background-color: #42c2ff;
+    color: #effffd;
+    font-size: 32px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -webkit-fill-available;
+    background-color: inherit;
+    min-height: inherit;
+}
+
+#home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 310px;
+    width: 50vw;
+    z-index: 2;
+    transition: 1s;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 200px 25% 0px 0px;
+}
+#home-container.minimized {
+    padding: 0px 15px;
+    width: 250px;
+}
+#home-container.minimized #search-input {
+    font-size: 12px;
+}
+#home-container.minimized #search-button {
+    font-size: 12px;
+    padding: 1px;
+    width: 55px;
+}
+
+#website-logo {
+    width: 100%;
+}
+#search-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 415px;
+    align-items: center;
+    gap: 5px;
+    top: -150px;
+    right: 0;
+}
+
+#search-input {
+    font-size: 28px;
+    width: 100%;
+}
+#search-input.invalid {
+    background-color: #ffacac;
+    border: 2px solid #ff6464;
+}
+#search-button {
+    background-color: #85f4ff;
+    color: #1f1f1f;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #42c2ff;
+    padding: 4px 10px;
+    width: 100px;
+}
+button:hover {
+    filter: brightness(80%);
+}
+button:active {
+    filter: brightness(60%);
+}
+
+#loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin: -62.5px;
+    background-color: #85f4ff;
+    height: 125px;
+    width: 125px;
+    border: 2px solid #1f1f1f;
+    border-radius: 30px;
+    z-index: 3;
+}
+#loading-icon {
+    font-size: 100px;
+    color: #ffd205;
+    animation: load-anim 2s ease-in-out 0s infinite;
+}
+
+#weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: inherit;
+    min-height: inherit;
+    width: 75%;
+    position: relative;
+    transition: 0.5s cubic-bezier(0.33, 0.04, 0.48, 1.38);
+    top: -500px;
+    left: -100%;
+}
+#weather-container.displayed {
+    top: 0;
+    left: 0;
+}
+
+#city-name {
+    margin-top: 225px;
+    font-size: 60px;
+    color: #1f1f1f;
+}
+#weather-display {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid #1f1f1f;
+    background-color: #fafafa;
+    padding: 35px 50px 35px 50px;
+    gap: 15px;
+    height: 525px;
+    width: inherit;
+}
+#weather-description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+#weather-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px solid #1f1f1f;
+    height: 175px;
+    width: 175px;
+}
+#weather-icon {
+    filter: drop-shadow(2px 0px 0 black) drop-shadow(0px 2px 0 black) drop-shadow(-2px -0px 0 black)
+        drop-shadow(-0px -2px 0 black);
+    width: 200px;
+    height: 200px;
+}
+#weather-description {
+    font-size: 40px;
+}
+.weather-info {
+    font-size: 30px;
+}
+#temp-scale-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#temp-scale-toggle {
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px;
+}
+.farenheit {
+    background-color: #f7c3c3;
+    color: #521212;
+    border: 2px solid #521212;
+}
+.farenheit::before {
+    content: "F";
+}
+.celsius {
+    background-color: #c3dbf7;
+    color: #123052;
+    border: 2px solid #123052;
+}
+.celsius::before {
+    content: "C";
+}
+
+@keyframes load-anim {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
