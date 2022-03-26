@@ -2,7 +2,7 @@
 const path = require("path"),
     HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const pages = ["index", "./battleship/index"];
+const pages = ["index", "./battleship/index", "./todo/index"];
 
 module.exports = {
     mode: "development",
