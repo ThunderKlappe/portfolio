@@ -6,7 +6,11 @@
     position: fixed;
     top: 0;
     width: 100%;
+<<<<<<< HEAD
     z-index: 2;
+=======
+    z-index: 3;
+>>>>>>> 65a3f46 (Header now has links to pages)
 }
 #header-title {
     margin-left: 60px;
