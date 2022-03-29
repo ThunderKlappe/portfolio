@@ -1,4 +1,5 @@
 import { DOMManip } from "./DOMManip";
+import createFooter from "./Footer";
 import createHeader from "./Header";
 import "./index.css";
 
@@ -6,6 +7,7 @@ import "./index.css";
 const displayPage = (() => {
     const header = createHeader("Tim Schley's Portfolio");
     const content = DOMManip.makeNewElement("div", "content");
+    const footer = createFooter();
     const titleContainer = DOMManip.makeNewElement("div", "title-container");
     const headshot = DOMManip.makeNewElement("div", "headshot");
     const title = DOMManip.makeNewElement(
@@ -78,5 +80,5 @@ const displayPage = (() => {
     DOMManip.appendChildren(links, developmentContainer, videoContainer, photoContainer);
     DOMManip.appendChildren(titleContainer, headshot, title);
     DOMManip.appendChildren(content, titleContainer, aboutMe, links);
-    DOMManip.appendChildren(document.body, header, content);
+    DOMManip.appendChildren(document.body, header, content, footer);
 })();
