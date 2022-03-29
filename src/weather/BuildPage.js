@@ -2,10 +2,11 @@ import { DOMManip } from "./DOMManip";
 import logo from "./assets/logo.png";
 import cityData from "./city.json";
 import { EventHandler } from "./EventHandler";
+import createHeader from "../Header";
 
 export const BuildPage = (() => {
     const buildStartingPage = () => {
-        const header = DOMManip.makeNewElement("div", "header", "", "Weather");
+        const header = createHeader("Weather");
         const content = DOMManip.makeNewElement("div", "content");
         const homeContainer = DOMManip.makeNewElement("div", "home-container", "starting");
 

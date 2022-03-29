@@ -3,6 +3,7 @@ import { DOMManip } from "./DOMManip";
 import { EventHandler } from "./EventHandler";
 import { Modal } from "./Modal";
 import shipArray from "./ships.json";
+import createHeader from "../Header";
 
 export const BuildPage = (() => {
     const activateBoard = id => {
@@ -27,7 +28,7 @@ export const BuildPage = (() => {
         return gridContainer;
     };
     const buildStartingPage = () => {
-        const header = DOMManip.makeNewElement("div", "header", "", "Battleship");
+        const header = createHeader("Battleship");
         const content = DOMManip.makeNewElement("div", "content");
         const gameContainer = DOMManip.makeNewElement("div", "game-container");
         const instructions = DOMManip.makeNewElement(

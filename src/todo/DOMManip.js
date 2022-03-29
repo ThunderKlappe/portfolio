@@ -1,6 +1,8 @@
+/* eslint-disable no-unexpected-multiline */
 import { projectFunctions } from ".";
 import EventHandler from "./EventHandler";
 import { toDate, format, add, parseISO, parse, isBefore, startOfDay } from "date-fns";
+import createHeader from "../Header";
 
 const DOMManip = (() => {
     //shorthand to get elements easier
@@ -67,7 +69,7 @@ const DOMManip = (() => {
 
     //adds all of the starting element to the page when first loading the page
     const _makeStartingPage = () => {
-        const header = _makeNewElement("div", "header", "", "To-Do List");
+        const header = createHeader("To-Do List");
         document.body.appendChild(header);
 
         const content = _makeNewElement("div", "content");
@@ -940,7 +942,8 @@ const DOMManip = (() => {
         _displayTitle();
         EventHandler.activateProjectButtons();
         projectFunctions
-            .getAllProjects()[projectNumber].getTasks()
+            .getAllProjects()
+            [projectNumber].getTasks()
             .forEach((task, index) => _fillInTask(task, index, index));
         _displayTaskInput();
     };

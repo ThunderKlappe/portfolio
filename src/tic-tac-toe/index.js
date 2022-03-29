@@ -1,5 +1,6 @@
 import "./style.css";
 import { DOMManip } from "./DOMManip";
+import createHeader from "../Header";
 
 const Player = type => {
     const getType = () => type;
@@ -101,7 +102,7 @@ const AIPlayer = (type, difficulty) => {
 
 // eslint-disable-next-line no-unused-vars
 const _makeDisplay = (() => {
-    const header = DOMManip.makeNewElement("div", "header", "", "Tic-Tac-Toe");
+    const header = createHeader("Tic-Tac-Toe");
     const content = DOMManip.makeNewElement("div", "content");
     const boardContainer = DOMManip.makeNewElement("div", "board-container");
     const pieceSelection = DOMManip.makeNewElement(
