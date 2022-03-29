@@ -1,21 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { DOMManip } from "../DOMManip";
 import { createShowcase, videoFunctions } from "../Showcase";
 import "../index.css";
 
 const createWeddings = (() => {
     createShowcase("Weddings");
-    const content = DOMManip.getElement("#content");
+    const content = document.querySelector("#content");
 
-    const containerBenJess = videoFunctions.createVideo(
-        "Ben and Jess Church",
-        "https://www.youtube.com/embed/iDwgV2nleCY"
-    );
+    const page = videoFunctions.createVideoPage(
+        {title:"Ben and Jess Church", source:"https://www.youtube.com/embed/iDwgV2nleCY"}, 
+        {title:"Jarrod and Hayley Lowe", source:"https://www.youtube.com/embed/BQrpmEs0p48"});
 
-    const containerJarrodHayley = videoFunctions.createVideo(
-        "Jarrod and Hayley Lowe",
-        "https://www.youtube.com/embed/BQrpmEs0p48"
-    );
-
-    DOMManip.appendChildren(content, containerBenJess, containerJarrodHayley);
+    page.forEach(page=>{
+        content.appendChild(page);
+    });
 })();
