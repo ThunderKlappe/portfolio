@@ -3,6 +3,7 @@ import { projectFunctions } from ".";
 import EventHandler from "./EventHandler";
 import { toDate, format, add, parseISO, parse, isBefore, startOfDay } from "date-fns";
 import createHeader from "../Header";
+import createFooter from "../Footer";
 
 const DOMManip = (() => {
     //shorthand to get elements easier
@@ -71,9 +72,8 @@ const DOMManip = (() => {
     const _makeStartingPage = () => {
         const header = createHeader("To-Do List");
         document.body.appendChild(header);
-
         const content = _makeNewElement("div", "content");
-
+        const footer = createFooter();
         const sidePanel = _makeNewElement("div", "side-panel");
 
         const todaySideHeaderContainer = _makeNewElement("div", "", "side-header-container");
@@ -138,6 +138,7 @@ const DOMManip = (() => {
         content.appendChild(addProjectButtonWrapper);
         content.appendChild(clearAllButtonContainer);
         document.body.appendChild(content);
+        document.body.appendChild(footer);
     };
 
     //goes through all of the projects and if a task's due date is offset by a certain days from today

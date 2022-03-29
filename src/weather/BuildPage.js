@@ -3,11 +3,13 @@ import logo from "./assets/logo.png";
 import cityData from "./city.json";
 import { EventHandler } from "./EventHandler";
 import createHeader from "../Header";
+import createFooter from "../Footer";
 
 export const BuildPage = (() => {
     const buildStartingPage = () => {
         const header = createHeader("Weather");
         const content = DOMManip.makeNewElement("div", "content");
+        const footer = createFooter();
         const homeContainer = DOMManip.makeNewElement("div", "home-container", "starting");
 
         const webLogo = new Image();
@@ -30,7 +32,7 @@ export const BuildPage = (() => {
         DOMManip.appendChildren(homeContainer, webLogo, searchForm);
         content.appendChild(homeContainer);
 
-        DOMManip.appendChildren(document.body, header, content);
+        DOMManip.appendChildren(document.body, header, content, footer);
     };
 
     const makeLoading = () => {

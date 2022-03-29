@@ -4,6 +4,7 @@ import { EventHandler } from "./EventHandler";
 import { Modal } from "./Modal";
 import shipArray from "./ships.json";
 import createHeader from "../Header";
+import createFooter from "../Footer";
 
 export const BuildPage = (() => {
     const activateBoard = id => {
@@ -30,6 +31,7 @@ export const BuildPage = (() => {
     const buildStartingPage = () => {
         const header = createHeader("Battleship");
         const content = DOMManip.makeNewElement("div", "content");
+        const footer = createFooter();
         const gameContainer = DOMManip.makeNewElement("div", "game-container");
         const instructions = DOMManip.makeNewElement(
             "div",
@@ -67,7 +69,7 @@ export const BuildPage = (() => {
 
         DOMManip.appendChildren(gameContainer, instructions, boardsContainer, newGameButton);
         content.appendChild(gameContainer);
-        DOMManip.appendChildren(document.body, header, content);
+        DOMManip.appendChildren(document.body, header, content, footer);
 
         EventHandler.activateNewGameButton();
     };

@@ -1,6 +1,7 @@
 import "./style.css";
 import { DOMManip } from "./DOMManip";
 import createHeader from "../Header";
+import createFooter from "../Footer";
 
 const Player = type => {
     const getType = () => type;
@@ -104,6 +105,7 @@ const AIPlayer = (type, difficulty) => {
 const _makeDisplay = (() => {
     const header = createHeader("Tic-Tac-Toe");
     const content = DOMManip.makeNewElement("div", "content");
+    const footer = createFooter();
     const boardContainer = DOMManip.makeNewElement("div", "board-container");
     const pieceSelection = DOMManip.makeNewElement(
         "div",
@@ -202,7 +204,7 @@ const _makeDisplay = (() => {
         winner
     );
     content.appendChild(boardContainer);
-    DOMManip.appendChildren(document.body, header, content);
+    DOMManip.appendChildren(document.body, header, content, footer);
 })();
 
 const board = (() => {
