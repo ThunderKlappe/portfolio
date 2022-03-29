@@ -32,14 +32,27 @@ const videoFunctions = (() => {
         );
     }
 
-    function createVideo(title, source) {
+    function _createVideo(title, source) {
         const videoContainer = DOMManip.makeNewElement("div", "", "showcase-container");
         const videoTitle = DOMManip.makeNewElement("div", "", "showcase-title", title);
         const videoBenJess = _embedVideo(source);
         DOMManip.appendChildren(videoContainer, videoTitle, videoBenJess);
         return videoContainer;
     }
-    return { createVideo };
+    function createVideoPage(...videos){
+        let page = [];
+        videos.forEach(video=>{
+            page.push(_createVideo(video.title, video.source))
+        })
+        return page;
+    }
+    function displayVideoPage(page){
+        const content = DOMManip.getElement("#content");
+        page.forEach(page=>{
+            content.appendChild(page);
+        });
+    }
+    return { createVideoPage, displayVideoPage };
 })();
 
 export { createShowcase, videoFunctions };
