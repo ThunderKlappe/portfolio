@@ -1,9 +1,8 @@
-import DOMManip from "./DOMManip";
+import { DOMManip } from "./DOMManip";
 import createFooter from "./Footer";
 import createHeader from "./Header";
-import "./index.css";
 
-export default function createShowcase(title) {
+function createShowcase(title) {
     const header = createHeader(title);
     const content = DOMManip.makeNewElement("div", "content");
     const footer = createFooter();
@@ -15,3 +14,32 @@ export default function createShowcase(title) {
     DOMManip.appendChildren(content, titleContainer);
     DOMManip.appendChildren(document.body, header, content, footer);
 }
+const videoFunctions = (() => {
+    function _embedVideo(source) {
+        return DOMManip.makeNewElement(
+            "iFrame",
+            "",
+            "showcase-video",
+            "",
+            { width: "560" },
+            { height: "315" },
+            { src: source },
+            { frameborder: "0" },
+            {
+                allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            },
+            { allowfullscreen: "" }
+        );
+    }
+
+    function createVideo(title, source) {
+        const videoContainer = DOMManip.makeNewElement("div", "", "showcase-container");
+        const videoTitle = DOMManip.makeNewElement("div", "", "showcase-title", title);
+        const videoBenJess = _embedVideo(source);
+        DOMManip.appendChildren(videoContainer, videoTitle, videoBenJess);
+        return videoContainer;
+    }
+    return { createVideo };
+})();
+
+export { createShowcase, videoFunctions };

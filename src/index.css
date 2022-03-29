@@ -101,3 +101,12 @@ body {
 .link-button:hover {
     filter: brightness(0.75);
 }
+
+.showcase-title {
+    font-size: 28px;
+    margin: 8px;
+}
+
+.showcase-container {
+    margin: 20px 0px;
+}
