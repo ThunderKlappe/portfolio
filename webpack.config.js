@@ -10,6 +10,7 @@ const pages = [
     "./tic-tac-toe/index",
     "./weddings/index",
     "./adventure/index",
+    "./other/index",
 ];
 
 module.exports = {
