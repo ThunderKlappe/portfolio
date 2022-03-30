@@ -39,16 +39,16 @@ const videoFunctions = (() => {
         DOMManip.appendChildren(videoContainer, videoTitle, video);
         return videoContainer;
     }
-    function createVideoPage(...videos){
+    function createVideoPage(...videos) {
         let page = [];
-        videos.forEach(video=>{
-            page.push(_createVideo(video.title, video.source))
-        })
+        videos.forEach(video => {
+            page.push(_createVideo(video.title, video.source));
+        });
         return page;
     }
-    function displayVideoPage(page){
+    function displayVideoPage(page) {
         const content = DOMManip.getElement("#content");
-        page.forEach(page=>{
+        page.forEach(page => {
             content.appendChild(page);
         });
     }
