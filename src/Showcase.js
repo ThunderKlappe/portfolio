@@ -35,8 +35,8 @@ const videoFunctions = (() => {
     function _createVideo(title, source) {
         const videoContainer = DOMManip.makeNewElement("div", "", "showcase-container");
         const videoTitle = DOMManip.makeNewElement("div", "", "showcase-title", title);
-        const videoBenJess = _embedVideo(source);
-        DOMManip.appendChildren(videoContainer, videoTitle, videoBenJess);
+        const video = _embedVideo(source);
+        DOMManip.appendChildren(videoContainer, videoTitle, video);
         return videoContainer;
     }
     function createVideoPage(...videos){
