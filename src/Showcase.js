@@ -77,11 +77,45 @@ const photoFunctions = (() => {
 
     function displayPhotoPage(page) {
         const content = DOMManip.getElement("#content");
+        const prev = DOMManip.makeNewElement("i", "prev", "prev fa-solid fa-angle-left");
+        const next = DOMManip.makeNewElement("i", "next", "next fa-solid fa-angle-right");
         const photoContainer = DOMManip.makeNewElement("div", "", "photos-container");
         page.forEach(page => {
             photoContainer.appendChild(page);
         });
+        DOMManip.appendChildren(photoContainer, prev, next);
         content.appendChild(photoContainer);
+        _activatePhotoPage();
+    }
+
+    function _activatePhotoPage() {
+        const prev = DOMManip.getElement(".prev");
+        const next = DOMManip.getElement(".next");
+
+        prev.addEventListener("click", plusSlides.bind(null, -1));
+        next.addEventListener("click", plusSlides.bind(null, 1));
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides((slideIndex += n));
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = DOMManip.getElements(".image-container");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
     }
 
     return { createPhotoPage, displayPhotoPage };
