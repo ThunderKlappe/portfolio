@@ -76,7 +76,7 @@ const photoFunctions = (() => {
     }
 
     function displayPhotoPage(page) {
-        const content = DOMManip.getElement(content);
+        const content = DOMManip.getElement("#content");
         const photoContainer = DOMManip.makeNewElement("div", "", "photos-container");
         page.forEach(page => {
             photoContainer.appendChild(page);
