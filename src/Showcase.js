@@ -1,6 +1,7 @@
 import { DOMManip } from "./DOMManip";
 import createFooter from "./Footer";
 import createHeader from "./Header";
+import "./showcase.css";
 
 function createShowcase(title) {
     const header = createHeader(title);
