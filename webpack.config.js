@@ -11,6 +11,7 @@ const pages = [
     "./weddings/index",
     "./adventure/index",
     "./other/index",
+    "./nature/index",
 ];
 
 module.exports = {
