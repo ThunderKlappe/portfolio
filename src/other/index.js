@@ -2,7 +2,7 @@
 import { createShowcase, videoFunctions } from "../Showcase";
 import "../index.css";
 
-const createAdventure = (() => {
+const createOther = (() => {
     createShowcase("Other Video Projects");
     const page = videoFunctions.createVideoPage(
         { title: "How to fix a flat tire", source: "https://www.youtube.com/embed/kz7u97MsdK0" },
