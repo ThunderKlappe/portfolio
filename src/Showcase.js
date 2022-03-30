@@ -55,4 +55,36 @@ const videoFunctions = (() => {
     return { createVideoPage, displayVideoPage };
 })();
 
-export { createShowcase, videoFunctions };
+const photoFunctions = (() => {
+    function createPhotoPage(...photos) {
+        let page = [];
+        photos.forEach((photo, index) => {
+            const container = DOMManip.makeNewElement("div", "", "image-container");
+            const number = DOMManip.makeNewElement(
+                "div",
+                "",
+                "number-text",
+                `${index + 1} / ${photos.length}`
+            );
+            const photograph = new Image();
+            photograph.src = photo;
+
+            DOMManip.appendChildren(container, number, photograph);
+            page.push(container);
+        });
+        return page;
+    }
+
+    function displayPhotoPage(page) {
+        const content = DOMManip.getElement(content);
+        const photoContainer = DOMManip.makeNewElement("div", "", "photos-container");
+        page.forEach(page => {
+            photoContainer.appendChild(page);
+        });
+        content.appendChild(photoContainer);
+    }
+
+    return { createPhotoPage, displayPhotoPage };
+})();
+
+export { createShowcase, videoFunctions, photoFunctions };
