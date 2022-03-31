@@ -22,13 +22,17 @@ import sunset from "./assets/sunset.jpg";
 import sunset2 from "./assets/sunset2.jpg";
 import tfj from "./assets/tfj.jpg";
 import waterfall from "./assets/waterfall.jpg";
+import waldo from "./assets/waldo.JPG";
+import waldo2 from "./assets/waldo2.JPG";
 
 const createNature = (() => {
     createShowcase("Nature");
     const page = photoFunctions.createPhotoPage(
         rainbowcloud,
+        waldo,
         iceland,
         iceland2,
+        waldo2,
         iceland3,
         iceland4,
         icelandwaterfall,
