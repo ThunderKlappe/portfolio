@@ -19,7 +19,7 @@ const displayPage = (() => {
     const aboutMe = DOMManip.makeNewElement(
         "div",
         "about-me",
-        "content-text",
+        "brief-description content-text",
         "Tim Schley is a listener. With a keen ear and a professional eye, Tim works with you to discover what you are looking for and what you need. With an attention to detail, he will always provide you with a product that you will be happy with."
     );
     const links = DOMManip.makeNewElement("div", "links");
