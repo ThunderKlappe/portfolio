@@ -13,6 +13,7 @@ const pages = [
     "./other/index",
     "./nature/index",
     "./astro/index",
+    "./about/index",
 ];
 
 module.exports = {

@@ -1,0 +1,89 @@
+#full-container {
+    display: flex;
+}
+#content-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.side-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 30%;
+    margin: 25px;
+}
+
+#brief-description {
+    margin: 20px 0px 0px 0px;
+    width: auto;
+}
+
+#img-link-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-link {
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.img-link:hover {
+    filter: brightness(70%);
+}
+
+.sub-title {
+    font-size: 38px;
+}
+
+#resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#resume-data-container {
+    max-width: 1000px;
+}
+
+.section-title {
+    font-size: 26px;
+    color: black;
+}
+
+.section-text {
+    color: darkslategray;
+}
+
+.employer-label {
+    color: black;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.location-label {
+    color: black;
+    margin-right: 15px;
+}
+
+.time-label {
+    color: black;
+}
+
+.skill-list {
+    margin-top: 3px;
+}
+
+.school-label {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.activity-text {
+    font-size: 14px;
+    font-style: italic;
+}
